@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steven Miecznikowski — Fine Artist</title>
+<meta name="description" content="Works by fine arts painter Steven Miecznikowski.">
+<style>
+:root{--bg:#111;--fg:#f1efe9;--muted:#9b9992;--line:#2b2b2b;--card:#181818}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;font-weight:300}a{color:inherit;text-decoration:none}
+header{padding:42px 5vw 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(17,17,17,.94);backdrop-filter:blur(10px);z-index:10}.nav{display:flex;justify-content:space-between;align-items:end;gap:20px}.name{font-size:clamp(22px,3vw,38px);letter-spacing:.04em}.sub{font-size:12px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;margin-top:8px}.links{display:flex;gap:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.links a:hover{color:#fff}
+.hero{min-height:58vh;display:flex;align-items:flex-end;padding:8vw 5vw 7vw;border-bottom:1px solid var(--line)}.hero h1{font-size:clamp(52px,10vw,150px);line-height:.86;font-weight:400;letter-spacing:-.055em;margin:0;max-width:1000px}.hero p{max-width:600px;color:var(--muted);font-size:15px;line-height:1.7;margin:28px 0 0}
+.section{padding:80px 5vw}.section-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:35px}.section h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;margin:0}.count{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px}.work{cursor:pointer}.image-wrap{background:#191919;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}.work img{width:100%;height:100%;object-fit:contain;transition:transform .5s ease}.work:hover img{transform:scale(1.025)}.info{padding-top:12px;display:flex;justify-content:space-between;gap:15px}.title{font-size:15px}.meta{color:var(--muted);font-size:12px;line-height:1.6;text-align:right}.sold{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid #555;padding:3px 6px;display:inline-block;margin-top:5px}
+.about{max-width:850px}.about p{font-family:Georgia,serif;font-size:clamp(23px,3vw,38px);line-height:1.35;margin:0}.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}.contact p{color:var(--muted);line-height:1.7}.contact .label{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--fg)}footer{padding:30px 5vw;border-top:1px solid var(--line);color:var(--muted);font-size:11px;display:flex;justify-content:space-between}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:30;display:none;padding:4vw}.modal.open{display:flex;align-items:center;justify-content:center}.modal-content{width:min(1200px,94vw);max-height:92vh;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:30px;align-items:center}.modal img{width:100%;max-height:82vh;object-fit:contain}.modal-info{border-left:1px solid #333;padding-left:25px}.modal-info h3{font-size:24px;font-weight:400;margin:0 0 14px}.modal-info p{color:var(--muted);line-height:1.8;font-size:13px}.close{position:fixed;right:30px;top:25px;font-size:30px;cursor:pointer;color:#aaa}.close:hover{color:#fff}
+@media(max-width:800px){header{position:relative}.nav{align-items:flex-start}.links{gap:14px}.grid{grid-template-columns:repeat(2,1fr)}.hero{min-height:55vh}.contact{grid-template-columns:1fr}.modal-content{grid-template-columns:1fr;overflow:auto}.modal-info{border-left:0;border-top:1px solid #333;padding:18px 0}.modal img{max-height:62vh}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.section{padding:60px 5vw}.info{display:block}.meta{text-align:left;margin-top:5px}.hero h1{font-size:58px}.links{font-size:10px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div><div class="name">Steven Miecznikowski</div><div class="sub">Fine Arts / Painting</div></div><nav class="links"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+<section class="hero"><div><h1>Works on<br>Canvas</h1><p>A selection of paintings and works from 2017–2025.</p></div></section>
+<section id="work" class="section"><div class="section-head"><h2>Selected Works</h2><div class="count">26 works</div></div><div id="grid" class="grid"></div></section>
+<section id="about" class="section"><div class="section-head"><h2>About</h2></div><div class="about"><p>My work as a fine arts painter is shaped by a personal journey of transformation, blending technical experience with creative exploration. Inspired by Joseph Beuys, I view art as a vehicle for healing and meaning. Through my work, I strive to foster deeper connections and inspire personal and societal growth.</p></div></section>
+<section id="contact" class="section"><div class="section-head"><h2>Contact</h2></div><div class="contact"><div><div class="label">Artist</div><p>Steven Miecznikowski</p></div><div><div class="label">Inquiries</div><p>Add an email address, Instagram, or other professional contact here.</p></div></div></section>
+<footer><span>© 2025 Steven Miecznikowski</span><span>Portfolio</span></footer>
+<div id="modal" class="modal" aria-hidden="true"><button class="close" aria-label="Close">×</button><div class="modal-content"><img id="modalImg" src="" alt=""><div class="modal-info"><h3 id="modalTitle"></h3><p id="modalMeta"></p></div></div></div>
+<script>
+const works=[
+['Orphic','2017','24 × 18 in.','Acrylics and inks','Buffalo','p1_1.jpg',false],
+['Come and See','2017','18 × 24 in.','Spray paints and acrylics','', 'p2_1.jpg',true],
+['Farewell to Hypostasis','2022','30 × 15 in.','Oils and acrylics','Buffalo','p2_2.jpg',false],
+['Leviathan','2018','20 × 16 in.','Inks and acrylics','Buffalo','p3_1.jpg',false],
+['The Three Witnesses of Reseph','2022','16 × 20 in.','Oils and acrylics','Buffalo','p4_1.jpg',false],
+['Baptismal','2017','30 × 24 in.','Spray paints, acrylics, and India Ink','Buffalo','p5_1.jpg',false],
+['Popsicorpuscle','2020','20 × 16 in.','Oils and acrylics','Buffalo','p6_1.jpg',false],
+['Torpex Dysphoria','','18 × 20 in.','Charcoal, oils, and acrylics','Buffalo','p7_1.jpg',false],
+['Primordial','2018','16 × 30 in.','Oils and acrylics','Buffalo','p8_1.jpg',false],
+['Conflict and Chaos','2018','16 × 30 in.','Oils and acrylics','','p8_2.jpg',false],
+['SPRAY','2021','16 × 30 in.','Inks and oils','','p9_1.jpg',true],
+['Presence of Despair','2017','16 × 30 in.','Oils and acrylics','Buffalo','p9_2.jpg',false],
+['Buddies in the Melt Barrel','2021','30 × 24 in.','Oils and acrylics','Buffalo','p10_1.jpg',false],
+['Hoaxes','2024','16 × 30 in.','Oils and acrylics','Buffalo','p10_2.jpg',false],
+['Through the Bowels of Eternity','2022','14 × 11 in.','Oils, acrylics and pastels','','p11_1.jpg',true],
+['Pantheon','2023','24 × 30 in.','Oils and acrylics','','p12_1.jpg',true],
+['Hell is a Self-fulfilling Prophecy','2023','16 × 24 in.','Oils and acrylics','Buffalo','p13_1.jpg',false],
+['Abide in Me','2023','24 × 30 in.','Oils and acrylics','','p14_1.jpg',true],
+['When on High','2022','24 × 18 in.','Spray paints, charcoal, and acrylics','','p15_1.jpg',true],
+['SQUINTS','2024','4 × 7 in.','Ink on card stock','Buffalo','p16_1.jpg',false],
+['Maybe We Die Alone Every Night','2024','20 × 26 in.','Oils and acrylics','Buffalo','p17_1.jpg',false],
+['Rex, it will be OK','2023','24 × 18 in.','Acrylics and markers','','p18_1.jpg',true],
+['The Apprentice','2017','36 × 24 in.','Oils and acrylics','Buffalo','p19_1.jpg',false],
+['Horseman #36','2017','8 × 12 in.','Inks and watercolors on cardstock','','p19_2.jpg',true],
+['A Life Rotten','2022','14 × 11 in.','Watercolors and markers','','p20_1.jpg',true],
+['Stollen','2025','16 × 20 in.','Oils and acrylics','Buffalo','p21_1.jpg',false]
+];
+const grid=document.getElementById('grid');
+works.forEach((w,i)=>{const el=document.createElement('article');el.className='work';el.innerHTML=`<div class="image-wrap"><img src="images/${w[5]}" alt="${w[0]} by Steven Miecznikowski" loading="lazy"></div><div class="info"><div class="title">${w[0]}</div><div class="meta">${w[1]||''}<br>${w[2]}${w[6]?'<br><span class="sold">Sold</span>':''}</div></div>`;el.onclick=()=>openModal(w);grid.appendChild(el)});
+const modal=document.getElementById('modal');function openModal(w){document.getElementById('modalImg').src='images/'+w[5];document.getElementById('modalImg').alt=w[0]+' by Steven Miecznikowski';document.getElementById('modalTitle').textContent=w[0];document.getElementById('modalMeta').innerHTML=[w[1],w[2],w[3],w[4],w[6]?'SOLD':''].filter(Boolean).join('<br>');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}document.querySelector('.close').onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body></html>
