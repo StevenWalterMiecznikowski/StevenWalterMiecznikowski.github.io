@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Steven Walter Miecznikowski — Fine Artist</title>
 <meta name="description" content="Works by fine arts painter Steven Walter Miecznikowski.">
+
 <style>
 :root{--bg:#111;--fg:#f1efe9;--muted:#9b9992;--line:#2b2b2b;--card:#181818}
 *{box-sizing:border-box}
@@ -111,6 +112,51 @@ color:var(--muted);
 font-size:15px;
 line-height:1.7;
 margin:28px 0 0
+}
+
+/* DEMO VIDEO */
+
+.video-section{
+padding:80px 5vw;
+border-bottom:1px solid var(--line)
+}
+
+.video-head{
+display:flex;
+justify-content:space-between;
+align-items:baseline;
+border-bottom:1px solid var(--line);
+padding-bottom:18px;
+margin-bottom:35px
+}
+
+.video-head h2{
+font-size:13px;
+letter-spacing:.18em;
+text-transform:uppercase;
+font-weight:400;
+margin:0
+}
+
+.video-label{
+color:var(--muted);
+font-size:12px
+}
+
+.video-container{
+width:100%;
+max-width:1200px;
+margin:0 auto;
+aspect-ratio:16/9;
+background:#000;
+overflow:hidden
+}
+
+.video-container iframe{
+width:100%;
+height:100%;
+border:0;
+display:block
 }
 
 .section{
@@ -287,6 +333,7 @@ color:#aaa
 .close:hover{color:#fff}
 
 @media(max-width:800px){
+
 header{position:relative}
 
 .nav{
@@ -348,14 +395,20 @@ padding:18px 0
 .modal img{
 max-height:62vh
 }
+
 }
 
 @media(max-width:520px){
+
 .grid{
 grid-template-columns:1fr
 }
 
 .section{
+padding:60px 5vw
+}
+
+.video-section{
 padding:60px 5vw
 }
 
@@ -375,6 +428,7 @@ font-size:58px
 .links{
 font-size:10px
 }
+
 }
 </style>
 </head>
@@ -382,7 +436,9 @@ font-size:10px
 <body>
 
 <header>
+
 <div class="nav">
+
 <div>
 <div class="name">Steven Walter Miecznikowski</div>
 <div class="sub">Fine Arts / Painting</div>
@@ -393,17 +449,23 @@ font-size:10px
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </div>
+
 </header>
 
+
 <section class="hero">
+
 <div>
 <h1>Works</h1>
 <p>A selection of paintings and works from 2017–2026.</p>
 </div>
 
 <div class="hero-art" onclick="openModal(['Pax Deorum','2026','16 × 20 in.','Oil on canvas','Gilded frame, 1920','2026/pax-deorum.png',false])">
+
 <img src="2026/pax-deorum.png" alt="Pax Deorum">
+
 <div class="hero-info">
 <div class="hero-title">Pax Deorum</div>
 <div>2026</div>
@@ -411,37 +473,72 @@ font-size:10px
 <div>16 × 20 in.</div>
 <div>Gilded frame, 1920</div>
 </div>
+
 </div>
 
 </section>
 
+
+<!-- DEMO VIDEO -->
+
+<section class="video-section">
+
+<div class="video-head">
+<h2>Demo Video</h2>
+<div class="video-label">2026</div>
+</div>
+
+<div class="video-container">
+
+<iframe
+src="https://player.vimeo.com/video/1205954425"
+title="Steven Walter Miecznikowski — Demo Video 2026"
+allow="autoplay; fullscreen; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+
 <section id="work" class="section">
+
 <div class="section-head">
 <h2>Selected Works</h2>
 <div class="count">36 works</div>
 </div>
 
 <div id="grid" class="grid"></div>
+
 </section>
 
+
 <section id="about" class="section">
+
 <div class="section-head">
 <h2>About</h2>
 </div>
 
 <div class="about">
+
 <p>
 My work as a fine arts painter is shaped by a personal journey of transformation, blending technical experience with creative exploration. I begin paintings without a fixed image in mind. What matters to me is the act of starting, of putting a mark down and paying attention to what it suggests next. Through accumulation, adjustment, and removal, forms emerge gradually from the material itself. Inspired by Joseph Beuys, I view art as a vehicle for healing and meaning. I am interested in the moment when an image almost resolves but does not fully settle, and in the ways looking can turn abstraction into recognition.
 </p>
+
 </div>
+
 </section>
 
+
 <section id="contact" class="section">
+
 <div class="section-head">
 <h2>Contact</h2>
 </div>
 
 <div class="contact">
+
 <div>
 <div class="label">Artist</div>
 <p>Steven Walter Miecznikowski</p>
@@ -451,26 +548,40 @@ My work as a fine arts painter is shaped by a personal journey of transformation
 <div class="label">Inquiries</div>
 <p>Add an email address, Instagram, or other professional contact here.</p>
 </div>
+
 </div>
+
 </section>
 
+
 <footer>
+
 <span>© 2026 Steven Walter Miecznikowski</span>
 <span>Portfolio</span>
+
 </footer>
 
+
 <div id="modal" class="modal" aria-hidden="true">
+
 <button class="close" aria-label="Close">×</button>
 
 <div class="modal-content">
+
 <img id="modalImg" src="" alt="">
 
 <div class="modal-info">
+
 <h3 id="modalTitle"></h3>
+
 <p id="modalMeta"></p>
+
 </div>
+
 </div>
+
 </div>
+
 
 <script>
 
@@ -555,11 +666,15 @@ const el=document.createElement('article');
 el.className='work';
 
 el.innerHTML=`
+
 <div class="image-wrap">
+
 <img src="${w[5]}" alt="${w[0]} by Steven Walter Miecznikowski" loading="lazy">
+
 </div>
 
 <div class="info">
+
 <div class="title">${w[0]}</div>
 
 <div class="meta">
@@ -568,7 +683,9 @@ ${w[2]}
 ${w[6]?'<br><span class="sold">Sold</span>':''}
 </div>
 
-</div>`;
+</div>
+
+`;
 
 el.onclick=()=>openModal(w);
 
@@ -576,7 +693,9 @@ grid.appendChild(el);
 
 });
 
+
 const modal=document.getElementById('modal');
+
 
 function openModal(w){
 
@@ -587,11 +706,13 @@ document.getElementById('modalImg').alt=w[0]+' by Steven Walter Miecznikowski';
 document.getElementById('modalTitle').textContent=w[0];
 
 document.getElementById('modalMeta').innerHTML=[
+
 w[1],
 w[2],
 w[3],
 w[4],
 w[6]?'SOLD':''
+
 ].filter(Boolean).join('<br>');
 
 modal.classList.add('open');
@@ -601,6 +722,7 @@ modal.setAttribute('aria-hidden','false');
 document.body.style.overflow='hidden';
 
 }
+
 
 function closeModal(){
 
@@ -612,17 +734,23 @@ document.body.style.overflow='';
 
 }
 
+
 document.querySelector('.close').onclick=closeModal;
 
-/* Clicking the enlarged artwork closes the modal */
+
+/* Click the enlarged artwork to close it */
+
 document.getElementById('modalImg').onclick=closeModal;
 
-/* Clicking the dark area outside the artwork also closes the modal */
+
+/* Click the dark area outside the artwork to close it */
+
 modal.onclick=e=>{
 
 if(e.target===modal)closeModal();
 
 };
+
 
 document.addEventListener('keydown',e=>{
 
