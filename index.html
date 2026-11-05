@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,10 +8,25 @@
 <meta name="description" content="Works by fine arts painter Steven Walter Miecznikowski.">
 
 <style>
-:root{--bg:#111;--fg:#f1efe9;--muted:#9b9992;--line:#2b2b2b;--card:#181818}
+:root{
+--bg:#111;
+--fg:#f1efe9;
+--muted:#9b9992;
+--line:#2b2b2b;
+--card:#181818
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;font-weight:300}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--fg);
+font-family:Arial,Helvetica,sans-serif;
+font-weight:300
+}
+
 a{color:inherit;text-decoration:none}
 
 header{
@@ -152,6 +168,32 @@ border:0;
 display:block
 }
 
+/* REVELATIONS GALLERY */
+
+.revelations-gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+max-width:1200px;
+margin:0 auto
+}
+
+.revelations-gallery img{
+width:100%;
+height:300px;
+object-fit:contain;
+background:#191919;
+display:block;
+cursor:pointer;
+transition:opacity .3s ease
+}
+
+.revelations-gallery img:hover{
+opacity:.8
+}
+
+/* GENERAL SECTIONS */
+
 .section{
 padding:80px 5vw
 }
@@ -177,6 +219,8 @@ margin:0
 color:var(--muted);
 font-size:12px
 }
+
+/* SELECTED WORKS */
 
 .grid{
 display:grid;
@@ -230,6 +274,8 @@ display:inline-block;
 margin-top:5px
 }
 
+/* ABOUT AND CONTACT */
+
 .about{max-width:850px}
 
 .about p{
@@ -265,6 +311,8 @@ font-size:11px;
 display:flex;
 justify-content:space-between
 }
+
+/* IMAGE MODAL */
 
 .modal{
 position:fixed;
@@ -314,16 +362,39 @@ line-height:1.8;
 font-size:13px
 }
 
+/* GALLERY IMAGE MODAL: FULL WIDTH */
+
+.modal.gallery-open .modal-content{
+width:min(1400px,94vw);
+grid-template-columns:1fr;
+gap:0
+}
+
+.modal.gallery-open .modal img{
+max-height:90vh;
+width:100%;
+object-fit:contain
+}
+
+.modal.gallery-open .modal-info{
+display:none
+}
+
 .close{
 position:fixed;
 right:30px;
 top:25px;
 font-size:30px;
 cursor:pointer;
-color:#aaa
+color:#aaa;
+background:none;
+border:0;
+z-index:31
 }
 
 .close:hover{color:#fff}
+
+/* RESPONSIVE */
 
 @media(max-width:800px){
 
@@ -336,6 +407,10 @@ align-items:flex-start
 .links{gap:14px}
 
 .grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.revelations-gallery{
 grid-template-columns:repeat(2,1fr)
 }
 
@@ -381,12 +456,28 @@ padding:18px 0
 max-height:62vh
 }
 
+.modal.gallery-open .modal-content{
+grid-template-columns:1fr
+}
+
+.modal.gallery-open .modal img{
+max-height:85vh
+}
+
 }
 
 @media(max-width:520px){
 
 .grid{
 grid-template-columns:1fr
+}
+
+.revelations-gallery{
+grid-template-columns:1fr
+}
+
+.revelations-gallery img{
+height:280px
 }
 
 .section{
@@ -421,9 +512,7 @@ font-size:10px
 <body>
 
 <header>
-
 <div class="nav">
-
 <div>
 <div class="name">Steven Walter Miecznikowski</div>
 <div class="sub">Fine Arts / Painting</div>
@@ -434,11 +523,11 @@ font-size:10px
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </div>
-
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -460,7 +549,6 @@ font-size:10px
 </div>
 
 </div>
-
 </section>
 
 
@@ -474,13 +562,33 @@ font-size:10px
 </div>
 
 <div class="video-container">
-
 <iframe
 src="https://player.vimeo.com/video/1225087647?h=8759b87733"
 title="Steven Walter Miecznikowski — R E V E L A T I O N S"
 allow="autoplay; fullscreen; picture-in-picture"
 allowfullscreen>
 </iframe>
+</div>
+
+</section>
+
+
+<!-- REVELATIONS IMAGE GALLERY -->
+
+<section class="video-section">
+
+<div class="revelations-gallery">
+
+<img src="revelations/IMG_9591.PNG" alt="Revelations image 1" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9592.JPG" alt="Revelations image 2" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9593.JPG" alt="Revelations image 3" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9594.JPG" alt="Revelations image 4" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9595.JPG" alt="Revelations image 5" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9596.JPG" alt="Revelations image 6" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9597.JPG" alt="Revelations image 7" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9598.JPG" alt="Revelations image 8" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9599.JPG" alt="Revelations image 9" loading="lazy" onclick="openGalleryImage(this.src)">
+<img src="revelations/IMG_9600.JPG" alt="Revelations image 10" loading="lazy" onclick="openGalleryImage(this.src)">
 
 </div>
 
@@ -497,18 +605,18 @@ allowfullscreen>
 </div>
 
 <div class="video-container">
-
 <iframe
 src="https://player.vimeo.com/video/1205954425"
 title="Steven Walter Miecznikowski — Demo Video 2026"
 allow="autoplay; fullscreen; picture-in-picture"
 allowfullscreen>
 </iframe>
-
 </div>
 
 </section>
 
+
+<!-- SELECTED WORKS -->
 
 <section id="work" class="section">
 
@@ -522,6 +630,8 @@ allowfullscreen>
 </section>
 
 
+<!-- ABOUT -->
+
 <section id="about" class="section">
 
 <div class="section-head">
@@ -529,15 +639,16 @@ allowfullscreen>
 </div>
 
 <div class="about">
-
 <p>
-My work as a fine arts painter is shaped by a personal journey of transformation, blending technical experience with creative exploration. I begin paintings without a fixed image in mind. What matters to me is the act of starting, of putting a mark down and paying attention to what it suggests next. Through accumulation, adjustment, and removal, forms emerge gradually from the material itself. Inspired by Joseph Beuys, I view art as a vehicle for healing and meaning. I am interested in the moment when an image almost resolves but does not fully settle, and in the ways looking can turn abstraction into recognition.
+My work as a fine arts painter is shaped by a personal journey of transformation, blending technical experience with creative exploration. I begin paintings without a fixed image in mind. What matters to me is the act of starting, of putting a mark down and paying attention to what it suggests next. Through accumulation, adjustment, and removal, forms emerge gradually from the material itself. Inspired by Joseph Beuys, I view art as a vehicle for healing and meaning.
+I am interested in the moment when an image almost resolves but does not fully settle, and in the ways looking can turn abstraction into recognition.
 </p>
-
 </div>
 
 </section>
 
+
+<!-- CONTACT -->
 
 <section id="contact" class="section">
 
@@ -562,13 +673,15 @@ My work as a fine arts painter is shaped by a personal journey of transformation
 </section>
 
 
-<footer>
+<!-- FOOTER -->
 
+<footer>
 <span>© 2026 Steven Walter Miecznikowski</span>
 <span>Portfolio</span>
-
 </footer>
 
+
+<!-- IMAGE MODAL -->
 
 <div id="modal" class="modal" aria-hidden="true">
 
@@ -579,19 +692,17 @@ My work as a fine arts painter is shaped by a personal journey of transformation
 <img id="modalImg" src="" alt="">
 
 <div class="modal-info">
-
 <h3 id="modalTitle"></h3>
-
 <p id="modalMeta"></p>
-
 </div>
 
 </div>
-
 </div>
 
 
 <script>
+
+/* ARTWORK DATA */
 
 const works=[
 
@@ -665,6 +776,9 @@ const works=[
 
 ];
 
+
+/* BUILD SELECTED WORKS GRID */
+
 const grid=document.getElementById('grid');
 
 works.forEach((w,i)=>{
@@ -676,13 +790,10 @@ el.className='work';
 el.innerHTML=`
 
 <div class="image-wrap">
-
 <img src="${w[5]}" alt="${w[0]} by Steven Walter Miecznikowski" loading="lazy">
-
 </div>
 
 <div class="info">
-
 <div class="title">${w[0]}</div>
 
 <div class="meta">
@@ -690,7 +801,6 @@ ${w[1]||''}<br>
 ${w[2]}
 ${w[6]?'<br><span class="sold">Sold</span>':''}
 </div>
-
 </div>
 
 `;
@@ -702,10 +812,13 @@ grid.appendChild(el);
 });
 
 
+/* MODAL FUNCTIONS */
+
 const modal=document.getElementById('modal');
 
-
 function openModal(w){
+
+modal.classList.remove('gallery-open');
 
 document.getElementById('modalImg').src=w[5];
 
@@ -714,13 +827,11 @@ document.getElementById('modalImg').alt=w[0]+' by Steven Walter Miecznikowski';
 document.getElementById('modalTitle').textContent=w[0];
 
 document.getElementById('modalMeta').innerHTML=[
-
 w[1],
 w[2],
 w[3],
 w[4],
 w[6]?'SOLD':''
-
 ].filter(Boolean).join('<br>');
 
 modal.classList.add('open');
@@ -732,9 +843,36 @@ document.body.style.overflow='hidden';
 }
 
 
+/* OPEN REVELATIONS GALLERY IMAGE */
+
+function openGalleryImage(src){
+
+modal.classList.add('gallery-open');
+
+document.getElementById('modalImg').src=src;
+
+document.getElementById('modalImg').alt='R E V E L A T I O N S';
+
+document.getElementById('modalTitle').textContent='';
+
+document.getElementById('modalMeta').textContent='';
+
+modal.classList.add('open');
+
+modal.setAttribute('aria-hidden','false');
+
+document.body.style.overflow='hidden';
+
+}
+
+
+/* CLOSE MODAL */
+
 function closeModal(){
 
 modal.classList.remove('open');
+
+modal.classList.remove('gallery-open');
 
 modal.setAttribute('aria-hidden','true');
 
@@ -743,15 +881,17 @@ document.body.style.overflow='';
 }
 
 
+/* CLOSE BUTTON */
+
 document.querySelector('.close').onclick=closeModal;
 
 
-/* Click the enlarged artwork to close it */
+/* CLICK IMAGE TO CLOSE */
 
 document.getElementById('modalImg').onclick=closeModal;
 
 
-/* Click the dark area outside the artwork to close it */
+/* CLICK DARK BACKGROUND TO CLOSE */
 
 modal.onclick=e=>{
 
@@ -759,6 +899,8 @@ if(e.target===modal)closeModal();
 
 };
 
+
+/* ESCAPE KEY TO CLOSE */
 
 document.addEventListener('keydown',e=>{
 
